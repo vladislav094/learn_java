@@ -1,4 +1,4 @@
-package org.example;
+//package org.example;
 
 class CLDemo {
     public static void main(String args[]) {
