@@ -21,13 +21,15 @@ public class Kata {
     public static String countingSheep(int num) {
         //Add your code here
         String someText = " sheep...";
-        String resultText = "";
-        if(num > 0) {
-            for (int i = 0; i < num; i++) {
-                resultText = resultText + (i + 1) + someText;
-            }
-        }
-        return resultText;
+        StringBuffer resultText = new StringBuffer();
+        if(num > 0)
+//            {
+//            for (int i = 0; i < num; i++) {
+//                resultText = resultText + (i + 1) + someText;
+//            }
+//        }
+        {for (int i = 0; i < num; i++) resultText.append(i+1).append(someText);}
+        return resultText.toString();
     }
 
 
@@ -36,6 +38,6 @@ public class Kata {
         int[] myArray = {100, 90};
         System.out.println(Kata.betterThanAverage(myArray, 11));
         System.out.println(Kata.greet("Daniel", "daniell"));
-        System.out.println(Kata.countingSheep(0));
+        System.out.println(Kata.countingSheep(5));
     }
 }
