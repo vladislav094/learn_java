@@ -44,7 +44,7 @@ public class FSDemo {
         }
         System.out.println("");
 
-        System.out.println("\n Обработка ошибок с выводом отчета.");
+        System.out.println("\nОбработка ошибок с выводом отчета.");
         for(int i=0; i <(fs.length * 2); i++)
             if(!fs.put(i, i * 10))
                 System.out.println("Индекс " + i + " вне допустимого диапазона");
