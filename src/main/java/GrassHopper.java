@@ -6,6 +6,11 @@ public class GrassHopper{
             arrayIntegers[i] = i + 1;
             total += arrayIntegers[i];
         }
+        String x = "laststrig";
+        for(char i : x.toCharArray()){
+            System.out.println(i);
+        }
+
         return total;
     }
     public static void main(String[] args) {
