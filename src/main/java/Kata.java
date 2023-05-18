@@ -8,10 +8,34 @@ public class Kata {
         }
         average = total / classPoints.length;
         return true ? yourPoints > average : false;
+    };
+
+    static String greet(String name, String owner) {
+        // Add code here
+        String helloBoss = "Hello boss";
+        String helloGuest = "Hello guest";
+        if(name.compareToIgnoreCase(owner) == 0) return helloBoss;
+        else return helloGuest;
+    };
+
+    public static String countingSheep(int num) {
+        //Add your code here
+        String someText = " sheep...";
+        String resultText = "";
+        if(num > 0) {
+            for (int i = 0; i < num; i++) {
+                resultText = resultText + (i + 1) + someText;
+            }
+        }
+        return resultText;
     }
+
+
 
     public static void main(String[] args) {
         int[] myArray = {100, 90};
         System.out.println(Kata.betterThanAverage(myArray, 11));
+        System.out.println(Kata.greet("Daniel", "daniell"));
+        System.out.println(Kata.countingSheep(0));
     }
 }
