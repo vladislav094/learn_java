@@ -20,6 +20,10 @@ public class Exercise {
         System.out.println(Arrays.toString(someDouble));
         System.out.println(summa / someDouble.length);
 
+        int x, y;
+        x = 0;
+        y = x < 0 ? 10: 20;
+        System.out.println(y);
 
 
     }
