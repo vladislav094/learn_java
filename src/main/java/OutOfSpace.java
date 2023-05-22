@@ -46,6 +46,15 @@ public class OutOfSpace {
         return result;
     }
 
+    public static String[] alternate(int n, String firstValue, String secondValue) {
+        String[] result = new String[n];
+        for(int i = 0; i < n; i++) {
+            result[i] = i % 2 == 0 ? firstValue : secondValue;
+        }
+        System.out.println(Arrays.toString(result));
+        return result;
+    }
+
     public static void main(String[] args) {
         OutOfSpace.toJadenCase("Must return null when the arg is null");
         OutOfSpace.toJadenCase("");
@@ -53,5 +62,7 @@ public class OutOfSpace {
 //        disemvowel("This website is for losers LOL!");
         disemvowel("No offense but,\nYour writing is among the worst I've ever read");
         disemvowel("What are you, a communist?");
+        alternate(5, "true", "false");
+        alternate(20, "blue", "red");
     }
 }
