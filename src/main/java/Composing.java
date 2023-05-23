@@ -2,32 +2,16 @@ import java.util.Arrays;
 
 public class Composing {
     public static String compose(String s1, String s2) {
-        String[] firstString = s1.split("\n");
-        String[] secondString = s2.split("\n");
-        StringBuilder[] resultString = new StringBuilder[firstString.length];
-        StringBuilder[] resultString_2 = new StringBuilder[secondString.length];
-        StringBuilder[] generalString = new StringBuilder[resultString.length];
-        for( int i = 0; i < firstString.length; i++) {
-            resultString[i] = new StringBuilder();
-            String t = firstString[i].substring(0, i+1);
-            resultString[i].append(t);
+        String[] tab1 = s1.split("\n");
+        String[] tab2 = s2.split("\n");
+        String s="";
+
+        for(int i=0;i<tab1.length;i++)
+        {
+            s = s + tab1[i].substring(0,i+1) + tab2[tab1.length-1-i].substring(0,tab1.length-i)+"\n";
         }
-        for(int j = secondString.length - 1; j >= 0; j--) {
-            int index = (secondString.length - j) -1;
-            resultString_2[index] = new StringBuilder();
-            StringBuilder y = new StringBuilder(secondString[j]);
-            resultString_2[index].append(y.substring(0, j+1));
-        }
-        for (int k = 0; k < generalString.length; k++) {
-            generalString[k] = new StringBuilder();
-            String c = resultString[k].append(resultString_2[k]).toString();
-            generalString[k].append(c);
-        }
-        StringBuilder result = new StringBuilder();
-        for(StringBuilder sp: generalString){
-            result.append(sp).append("\n");
-        }
-        return result.toString();
+        s = s.substring(0,s.length()-1);
+        return s;
     }
 
     public static void main(String[] args) {
