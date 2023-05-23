@@ -12,48 +12,35 @@ class Person {
 
 public class TheOffice {
     public static String outed(Person[] meet, String boss) {
+        double total = 0;
+        String answer = "";
         for (Person x: meet) {
+            double t = x.happiness;
             if(x.name.equals(boss)) {
-                System.out.println(x.happiness);
-                if(x.happiness <= 5) {
-                    System.out.println("Get");
-                    return "Get Out Now!";
-                }
-                else {
-                    System.out.println("Nice");
-                    return "Nice Work Champ!";
-                }
+                t = t * 2;
             }
-            if(boss.equals("boss")) {
-                int t = x.happiness * 2;
-                if(t <= 5) {
-                    System.out.println("Get");
-                    return "Get Out Now!";
-                }
-                else {
-                    System.out.println("Nice");
-                    return "Nice Work Champ!";
-                }
-            }
+            total += t;
 
         }
-        return "What should I do?";
+        total = (int) Math.round(total);
+        answer = ((total / meet.length) <= 5) ? "Get Out Now!" : "Nice Work Champ!";
+        return answer;
     }
 
     public static void main(String[] args) {
         Person[] meet = new Person[] {
-                new Person("tim", 0),
-                new Person("jim", 2),
-                new Person("randy", 0),
-                new Person("sandy", 7),
-                new Person("andy", 0),
-                new Person("katie", 5),
-                new Person("laura", 1),
-                new Person("saajid", 2),
-                new Person("alex", 3),
-                new Person("john", 2),
-                new Person("mr", 0)
+                new Person("tim", 1),
+                new Person("jim", 3),
+                new Person("randy", 9),
+                new Person("sandy", 6),
+                new Person("andy", 7),
+                new Person("katie", 6),
+                new Person("laura", 9),
+                new Person("saajid", 9),
+                new Person("alex", 9),
+                new Person("john", 9),
+                new Person("mr", 8)
         };
-        TheOffice.outed(meet, "boss");
+        TheOffice.outed(meet, "katie");
     }
 }
