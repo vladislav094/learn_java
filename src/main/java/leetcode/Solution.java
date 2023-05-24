@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Solution {
     public static boolean isPalindrome(int x) {
-        String str = Integer.toString(x);
+        String str = String.valueOf(x);
         String s = "";
         String[] result1 = new String[str.length()];
         String[] result2 = new String[str.length()];
