@@ -3,19 +3,18 @@ import java.util.Objects;
 
 public class Kata3 {
     public static String removeConsecutiveDuplicates(String s){
-        //solution
-        String[] arr = s.split(" ");
-        String[] result = new String[arr.length];
-        System.out.println(Arrays.toString(arr));
-        result[0] = arr[0];
-        for (int i = 1; i < arr.length; i++){
-            if(!arr[i].equals(result[i-1])) {
-                System.out.println(i);
-                System.arraycopy();
+        String[] str = s.split(" ");
+        StringBuilder strBuild = new StringBuilder();
+        String preWord = "";
+        for(String each: str){
+            System.out.println(each+ " " + preWord);
+            if(!each.equals(preWord)){
+                strBuild.append(each).append(" ");
+                preWord = each;
             }
         }
-        System.out.println(Arrays.toString(arr));
-        return " ";
+        System.out.println(strBuild.toString().trim());
+        return strBuild.toString().trim();
     }
 
     public static void main(String[] args) {
