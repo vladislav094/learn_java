@@ -5,6 +5,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode(int val) {
+        this.val = val;
+        this.next = null;
+    }
+}
+
+
+
 public class Solution {
     public static boolean isPalindrome(int x) {
         String str = String.valueOf(x);
@@ -56,6 +67,13 @@ public class Solution {
             s = s.replace(cd, "");
         }
         return s.length();
+    }
+
+    public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        ListNode dummy = new ListNode(0);
+        ListNode tail = dummy;
+
+        return dummy;
     }
 
     public static void main(String[] args) {
