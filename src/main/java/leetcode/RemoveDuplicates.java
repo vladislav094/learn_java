@@ -17,6 +17,7 @@ public class RemoveDuplicates {
             }
         }
         int k = set.size();
+
         System.out.println(Arrays.toString(nums));
         return k;
     }
@@ -24,6 +25,5 @@ public class RemoveDuplicates {
     public static void main(String[] args) {
         int[] arrInt = {0,0,1,1,1,2,2,3,3,4};
         removeDuplicates(arrInt);
-//        System.out.println(removeDuplicates(arrInt));
     }
 }
