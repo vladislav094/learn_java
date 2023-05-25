@@ -15,6 +15,14 @@ public class Test {
         v2.a = t1;
     }
 
+    static int sum(int ... args) {
+        int total = 0;
+        for (int x: args){
+            total += x;
+        }
+        return total;
+    }
+
     static String reverseString(String arg) {
         if(arg.isEmpty()){
             return arg;
@@ -32,5 +40,6 @@ public class Test {
         myObj1.show();
         myObj2.show();
         System.out.println(reverseString("zxcvbn"));
+        System.out.println(sum(1, 2, 3, 4));
     }
 }
