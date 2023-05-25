@@ -1,6 +1,9 @@
 package leetcode;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
 
 public class Solution {
     public static boolean isPalindrome(int x) {
@@ -26,15 +29,23 @@ public class Solution {
     }
 
     public static boolean isValid(String s) {
-        String temp = s;
-        for(int i = 0, j = 1; i < temp.length() - 1; i += 2, j+= 2) {
-            System.out.println(temp.charAt(i) + " " + temp.charAt(j));
-            int t1 = temp.charAt(j);
-            int t2 = temp.charAt(i);
-            System.out.println(t1 + " " + t2);
-            if(t1 - t2 > 2) return false;
+        Map<Character, Character> map = new HashMap<>();
+        Stack<Character> stack = new Stack<>();
+        map.put(')', '(');
+        map.put('}', '{');
+        map.put(']', '[');
+
+        for(int i = 0; i < s.length(); i ++) {
+            char c = s.charAt(i);
+            if(!map.containsKey(c)) {
+                stack.push(c);
+            } else {
+                char top = stack.isEmpty() ? '?' : stack.pop();
+                if( top != map.get(c))
+                    return false;
+            }
         }
-        return true;
+        return stack.isEmpty();
     }
 
     public static void main(String[] args) {
@@ -45,6 +56,8 @@ public class Solution {
 
 //        System.out.println(isValid("(){}[]"));
         System.out.println(isValid("(]"));
+
+        System.out.println(isValid("{()[]{}}"));
     }
 }
 
