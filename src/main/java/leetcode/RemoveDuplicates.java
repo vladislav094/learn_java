@@ -6,19 +6,17 @@ import java.util.Set;
 
 public class RemoveDuplicates {
     public static int removeDuplicates(int[] nums) {
+        int[] x = new int[nums.length];
         Set<Integer> set = new HashSet<>();
-        int k = 0;
-        int index = 0;
-        for(int i = 0; i < nums.length; i++) {
+        int unique = 0;
+        for(int i =0; i < nums.length; i++) {
             set.add(nums[i]);
+            if(nums[i] != nums[unique]) {
+                unique++;
+                nums[unique] = nums[i];
+            }
         }
-        k = set.size();
-        int[] result = new int[nums.length];
-        for(int x: set) {
-            result[index++] = x;
-        }
-        System.out.println(k);
-        System.out.println(Arrays.toString(result));
+        int k = set.size();
         System.out.println(Arrays.toString(nums));
         return k;
     }
