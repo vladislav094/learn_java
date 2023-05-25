@@ -16,19 +16,21 @@ public class Test {
         v1.a = t2;
     }
 
+    static String reverseString(String arg) {
+        if(arg.isEmpty()){
+            return arg;
+        }
+        return reverseString(arg.substring(1)) + arg.charAt(0);
+    }
 
     public static void main(String[] args) {
         Test myObj1 = new Test(11);
         Test myObj2 = new Test(22);
         myObj1.show();
         myObj2.show();
-
         swap(myObj1, myObj2);
-
         myObj1.show();
         myObj2.show();
-
-
-
+        System.out.println(reverseString("zxcvbn"));
     }
 }
