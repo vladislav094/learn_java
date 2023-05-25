@@ -48,6 +48,16 @@ public class Solution {
         return stack.isEmpty();
     }
 
+    public static int minLength(String s) {
+        String ab = "AB";
+        String cd = "CD";
+        while(s.contains(cd) | s.contains(ab)) {
+            s = s.replace(ab, "");
+            s = s.replace(cd, "");
+        }
+        return s.length();
+    }
+
     public static void main(String[] args) {
         System.out.println(isPalindrome(1212));
 
@@ -58,6 +68,7 @@ public class Solution {
         System.out.println(isValid("(]"));
 
         System.out.println(isValid("{()[]{}}"));
+        System.out.println(minLength("ABFCACDB"));
     }
 }
 
