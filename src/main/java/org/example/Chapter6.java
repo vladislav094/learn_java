@@ -46,6 +46,9 @@ public class Chapter6 {
         s1.push('a');
         s1.push('a');
         s1.push('a');
+        s1.push('a');
+        s1.push('a');
+        s1.push('a');
         System.out.println(s1.pop());
         System.out.println(s1.pop());
         System.out.println(s1.pop());
