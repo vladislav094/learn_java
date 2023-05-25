@@ -11,15 +11,15 @@ public class Test {
     }
     static void swap(Test v1, Test v2) {
         int t1 = v1.a;
-        int t2 = v2.a;
+        v1.a = v2.a;
         v2.a = t1;
-        v1.a = t2;
     }
 
     static String reverseString(String arg) {
         if(arg.isEmpty()){
             return arg;
         }
+        System.out.println(arg + " " + arg.charAt(0));
         return reverseString(arg.substring(1)) + arg.charAt(0);
     }
 
