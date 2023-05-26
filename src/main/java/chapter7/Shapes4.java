@@ -9,11 +9,11 @@ class TwoDShape4 {
         height = h;
     }
 
-    void setWidth(double w) { width = w; }
+    void setWidth(double width) { this.width = width;}
 
-    void setHeight(double h) { height = h; }
+    void setHeight(double height) { this.height = height;}
 
-    double getWidth() { return width; }
+    double getWidth() { return width;}
     double getHeight() {return height;}
 
     void showDim() {
