@@ -3,8 +3,15 @@ import java.util.*;
 
 
 class TwoDShape {
-    double width;
-    double height;
+    private double width;
+    private double height;
+
+    void setWidth(double w) { width = w; }
+
+    void setHeight(double h) { height = h; }
+
+    double getWidth() { return width; }
+    double getHeight() {return height;}
 
     void showDim() {
         System.out.println("Ширина и высота - " + width + " и " + height);
@@ -15,7 +22,7 @@ class Triangle extends TwoDShape {
     String style;
 
     double area() {
-        return width * height / 2;
+        return (getWidth() * getHeight()) / 2;
     }
 
     void showStyle() {
@@ -25,12 +32,12 @@ class Triangle extends TwoDShape {
 
 class Rectangle extends TwoDShape {
     boolean isSquare() {
-        if(width == height) return true;
+        if(getWidth() == getHeight()) return true;
         return false;
     }
 
     double area() {
-        return width * height;
+        return getHeight() * getWidth();
     }
 }
 
@@ -39,12 +46,12 @@ public class Shapes {
         Triangle t1 = new Triangle();
         Triangle t2 = new Triangle();
 
-        t1.width = 4.0;
-        t1.height = 4.0;
+        t1.setWidth(4.0);
+        t1.setHeight(4.0);
         t1.style = "закрашенный";
 
-        t2.width = 8.0;
-        t2.height = 12.0;
+        t2.setWidth(8.0);
+        t2.setHeight(12.0);
         t2.style = "контурный";
 
         System.out.println("Info about of t1: ");
