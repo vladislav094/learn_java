@@ -55,16 +55,8 @@ class Rectangle4 extends TwoDShape4 {
 
 public class Shapes4 {
     public static void main(String[] args) {
-        Triangle t1 = new Triangle();
-        Triangle t2 = new Triangle();
-
-        t1.setWidth(4.0);
-        t1.setHeight(4.0);
-        t1.style = "закрашенный";
-
-        t2.setWidth(8.0);
-        t2.setHeight(12.0);
-        t2.style = "контурный";
+        Triangle4 t1 = new Triangle4("закрашенный", 4.0, 4.0);
+        Triangle4 t2 = new Triangle4("контурный", 8.0, 12.0);
 
         System.out.println("Info about of t1: ");
         t1.showStyle();
