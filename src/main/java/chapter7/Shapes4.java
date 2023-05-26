@@ -4,9 +4,9 @@ class TwoDShape4 {
     private double width;
     private double height;
 
-    TwoDShape4(double w, double h) {
-        width = w;
-        height = h;
+    TwoDShape4(double width, double height) {
+        this.width = width;
+        this.height = height;
     }
 
     void setWidth(double width) { this.width = width;}
@@ -24,9 +24,9 @@ class TwoDShape4 {
 class Triangle4 extends TwoDShape4 {
     private String style;
 
-    Triangle4(String s, double w, double h) {
-        super(w, h); // вызов конструктора суперкласса
-        style = s;
+    Triangle4(String style, double width, double height) {
+        super(width, height); // вызов конструктора суперкласса
+        this.style = style;
     }
     double area() {
         return (getWidth() * getHeight()) / 2;
@@ -38,8 +38,8 @@ class Triangle4 extends TwoDShape4 {
 }
 
 class Rectangle4 extends TwoDShape4 {
-    Rectangle4(double w, double h) {
-        super(w, h);
+    Rectangle4(double width, double height) {
+        super(width, height);
     }
 
     boolean isSquare() {
