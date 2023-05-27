@@ -81,6 +81,7 @@ public class Solution {
         int startIndex = 0;
         int resultIndex = -1;
         String tempWord ="";
+        System.out.println(haystack.charAt(4));
         while (startIndex < lenHaystack - lenNeedle + 1) {
             tempWord = haystack.substring(startIndex, startIndex + lenNeedle);
             if(tempWord.equals(needle)) {
@@ -93,6 +94,24 @@ public class Solution {
             return resultIndex;
         } else return -1;
     }
+
+/* Это решение увидел в решениях под задачей на Leetcode:
+    public int strStr(String haystack, String needle) {
+        int haylength=haystack.length();
+        int needlelength=needle.length();
+        if(haylength<needlelength)
+            return -1;
+        for(int i=0;i<=haystack.length()-needle.length();i++){
+            int j=0;
+            while(j<needle.length() && haystack.charAt(i+j)==needle.charAt(j))
+                j++;
+            if(j==needle.length()){
+                return i;
+            }
+        }
+        return -1;
+    }
+ */
 
     public static void main(String[] args) {
 //        System.out.println(isPalindrome(1212));
