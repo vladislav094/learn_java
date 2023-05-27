@@ -77,19 +77,22 @@ public class Solution {
 
     public static int strStr(String haystack, String needle) {
         int lenNeedle = needle.length();
+        int lenHaystack = haystack.length();
         int startIndex = 0;
-
-        for(int i = 0; i < haystack.length(); i++) {
-            String word = haystack.substring(i);
-//            while (word.length() >= lenNeedle) {
-//                if(word.contains(needle)) System.out.print(word + " ");
-//            }
-            System.out.print(word.length());
-            System.out.println(haystack.substring(i));
+        int resultIndex = -1;
+        String tempWord ="";
+        while (startIndex < lenHaystack - lenNeedle + 1) {
+            tempWord = haystack.substring(startIndex, startIndex + lenNeedle);
+            if(tempWord.equals(needle)) {
+                resultIndex = startIndex;
+                break;
+            }
+            startIndex++;
         }
-        return 1;
+        if(resultIndex != -1) {
+            return resultIndex;
+        } else return -1;
     }
-
 
     public static void main(String[] args) {
 //        System.out.println(isPalindrome(1212));
