@@ -72,21 +72,40 @@ public class Solution {
     public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         ListNode dummy = new ListNode(0);
         ListNode tail = dummy;
-
         return dummy;
     }
 
+    public static int strStr(String haystack, String needle) {
+        int lenNeedle = needle.length();
+        int startIndex = 0;
+
+        for(int i = 0; i < haystack.length(); i++) {
+            String word = haystack.substring(i);
+//            while (word.length() >= lenNeedle) {
+//                if(word.contains(needle)) System.out.print(word + " ");
+//            }
+            System.out.print(word.length());
+            System.out.println(haystack.substring(i));
+        }
+        return 1;
+    }
+
+
     public static void main(String[] args) {
-        System.out.println(isPalindrome(1212));
+//        System.out.println(isPalindrome(1212));
+//
+//        String[] s = {"flower","flow","flight"};
+//        System.out.println(longestCommonPrefix(s));
+//
+////        System.out.println(isValid("(){}[]"));
+//        System.out.println(isValid("(]"));
+//
+//        System.out.println(isValid("{()[]{}}"));
+//        System.out.println(minLength("ABFCACDB"));
 
-        String[] s = {"flower","flow","flight"};
-        System.out.println(longestCommonPrefix(s));
-
-//        System.out.println(isValid("(){}[]"));
-        System.out.println(isValid("(]"));
-
-        System.out.println(isValid("{()[]{}}"));
-        System.out.println(minLength("ABFCACDB"));
+        String h = "sadbutsad";
+        String n = "sad";
+        System.out.println(strStr(h, n));
     }
 }
 
