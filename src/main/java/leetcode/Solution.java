@@ -1,9 +1,6 @@
 package leetcode;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 class ListNode {
     int val;
@@ -112,6 +109,23 @@ public class Solution {
         return -1;
     }
  */
+    public static int searchInsert(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length -1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if(nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid -1;
+            }
+        }
+        return left;
+    }
+
 
     public static void main(String[] args) {
 //        System.out.println(isPalindrome(1212));
@@ -125,9 +139,14 @@ public class Solution {
 //        System.out.println(isValid("{()[]{}}"));
 //        System.out.println(minLength("ABFCACDB"));
 
-        String h = "sadbutsad";
-        String n = "sad";
-        System.out.println(strStr(h, n));
+//        String h = "sadbutsad";
+//        String n = "sad";
+//        System.out.println(strStr(h, n));
+
+        int[] n = {1, 3, 5, 6};
+        int[] n2 = {1, 3, 5, 6, 7};
+        System.out.println(searchInsert(n, 2));
+        System.out.println(searchInsert(n2, 7));
     }
 }
 
