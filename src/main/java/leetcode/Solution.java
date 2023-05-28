@@ -111,10 +111,9 @@ public class Solution {
  */
     public static int searchInsert(int[] nums, int target) {
         int left = 0;
-        int right = nums.length -1;
-
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
+        int right = nums.length - 1;
+        while(left <= right) {
+            int mid = (left+right) /2;
             if(nums[mid] == target) {
                 return mid;
             } else if (nums[mid] < target) {
@@ -122,10 +121,19 @@ public class Solution {
             } else {
                 right = mid -1;
             }
-        }
-        return left;
+        } return left;
     }
 
+    public static int lengthOfLastWord(String s) {
+        String[] arr = s.split(" ");
+        int lastLength = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if(!arr[i].isEmpty()){
+                lastLength = arr[i].length();
+            }
+        }
+        return lastLength;
+    }
 
     public static void main(String[] args) {
 //        System.out.println(isPalindrome(1212));
@@ -143,10 +151,13 @@ public class Solution {
 //        String n = "sad";
 //        System.out.println(strStr(h, n));
 
-        int[] n = {1, 3, 5, 6};
-        int[] n2 = {1, 3, 5, 6, 7};
-        System.out.println(searchInsert(n, 2));
-        System.out.println(searchInsert(n2, 7));
+//        int[] n = {1, 3, 5, 7};
+//        int[] n2 = {1, 3, 5, 6, 7};
+//        System.out.println(searchInsert(n, 6));
+//        System.out.println(searchInsert(n2, 7));
+
+        String s = " лети со мной на луну ";
+        System.out.println(lengthOfLastWord(s));
     }
 }
 
