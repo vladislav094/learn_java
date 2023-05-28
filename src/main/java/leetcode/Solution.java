@@ -1,5 +1,6 @@
 package leetcode;
 
+import java.math.BigInteger;
 import java.util.*;
 
 class ListNode {
@@ -135,6 +136,39 @@ public class Solution {
         return lastLength;
     }
 
+//    public static int[] plusOne(int[] digits) {
+//        String str = "";
+//        BigInteger num =0;
+//        for(int i: digits){
+//            str += i;
+//        }
+//        num = BigInteger.ad(str) + 1;
+//        String str2 = String.valueOf(num);
+//        int[] result = new int[str2.length()];
+//        for(int i = 0; i<str2.length(); i++) {
+//            result[i] = Character.getNumericValue(str2.charAt(i));
+//        }
+//        return result;
+//    }
+
+    public String addBinary(String a, String b) {
+        StringBuilder sb = new StringBuilder();
+        int carry = 0;
+        int i = a.length() - 1;
+        int j = b.length() - 1;
+
+        while (i >= 0 || j >= 0 || carry == 1) {
+            if (i >= 0)
+                carry += a.charAt(i--) - '0';
+            if (j >= 0)
+                carry += b.charAt(j--) - '0';
+            sb.append(carry % 2);
+            carry /= 2;
+        }
+
+        return sb.reverse().toString();
+    }
+
     public static void main(String[] args) {
 //        System.out.println(isPalindrome(1212));
 //
@@ -155,9 +189,13 @@ public class Solution {
 //        int[] n2 = {1, 3, 5, 6, 7};
 //        System.out.println(searchInsert(n, 6));
 //        System.out.println(searchInsert(n2, 7));
+//        String s = " лети со мной на луну ";
+//        System.out.println(lengthOfLastWord(s));
 
-        String s = " лети со мной на луну ";
-        System.out.println(lengthOfLastWord(s));
+//        int[] arr = {4,3,2,1};
+        int[] arr = {9,8,7,6,5,4,3,2,1,0};
+        System.out.println(plusOne(arr));
+
     }
 }
 
