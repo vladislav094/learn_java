@@ -169,6 +169,28 @@ public class Solution {
         return sb.reverse().toString();
     }
 
+    public static int mySqrt(int x) {
+        int t;
+        int squareRoot = x / 2;
+        double z = 2.8;
+        int a = (int) z;
+        System.out.println(a);
+        return 1;
+    }
+
+    public static int climbStairs(int n) {
+        int first = 0;
+        int second = 1;
+        for (int j = 0; j < n; j++){
+            int t = first;
+            first = second;
+            second = t + second;
+        }
+        System.out.println(second);
+        return second;
+    }
+
+
     public static void main(String[] args) {
 //        System.out.println(isPalindrome(1212));
 //
@@ -193,8 +215,9 @@ public class Solution {
 //        System.out.println(lengthOfLastWord(s));
 
 //        int[] arr = {4,3,2,1};
-        int[] arr = {9,8,7,6,5,4,3,2,1,0};
+//        int[] arr = {9,8,7,6,5,4,3,2,1,0};
 
+        System.out.println(climbStairs(3));
     }
 }
 
