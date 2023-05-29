@@ -4,21 +4,17 @@ package leetcode;
 
 public class IsSymmetric101 {
     public boolean isSymmetric(Tree root) {
-        return isSymmetric(root, root);
+       return isSymetric(root, root);
     }
-
-    private boolean isSymmetric(Tree node1, Tree node2) {
-        if (node1 == null && node2 == null) {
+    private static boolean isSymetric(Tree a, Tree b) {
+        if (a == null && b == null) {
             return true;
         }
-        if (node1 == null || node2 == null) {
+        if(a == null || b == null) {
             return false;
         }
-        return  (node1.value == node2.value) && (isSymmetric(node1.left, node2.right)) && (isSymmetric(node1.right, node2.left));
-
+        return (a.value == b.value) && (isSymetric(a.left, b.right)) && (isSymetric(a.right, b.left));
     }
-
-
 
 
     public static void main(String[] args) {
@@ -30,6 +26,6 @@ public class IsSymmetric101 {
         y.left = new Tree(2);
         y.right = new Tree(3);
 
-        System.out.println(isSymmetric(x, y));
+//        System.out.println(isSymmetric(x, y));
     }
 }
