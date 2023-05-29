@@ -2,18 +2,18 @@ package leetcode;
 
 import java.util.*;
 
-class TreeNodee {
+class Tree {
     int value;
-    TreeNodee left;
-    TreeNodee right;
+    Tree left;
+    Tree right;
 
-    public TreeNodee(int value, TreeNodee left, TreeNodee right) {
+    public Tree(int value, Tree left, Tree right) {
         this.value = value;
         this.left = left;
         this.right = right;
     }
 
-    public TreeNodee(int value) {
+    public Tree(int value) {
         this.value = value;
     }
 
@@ -21,19 +21,22 @@ class TreeNodee {
 
 public class TreeNodes {
 
-    public static List<Integer> inorderTraversal(TreeNodee root) {
+    public static List<Integer> inorderTraversal(Tree root) {
         List<Integer> answer = new ArrayList<>();
-        Stack<TreeNodee> stack = new Stack<>();
+        Stack<Tree> stack = new Stack<>();
 
-        TreeNodee current = root;
+        Tree current = root;
+
         while (current != null || !stack.isEmpty()) {
             while (current != null) {
                 stack.push(current);
                 current = current.left;
             }
             current = stack.pop();
+
             answer.add(current.value);
             current = current.right;
+
         }
         return answer;
     }
