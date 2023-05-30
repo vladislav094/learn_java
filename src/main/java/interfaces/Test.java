@@ -1,4 +1,4 @@
-package Interfaces;
+package interfaces;
 
 public class Test {
     public static void main(String[] args) {
@@ -13,7 +13,8 @@ public class Test {
         System.out.println();
         outputInfo(animal);
         outputInfo(person);
-
+        System.out.println(info1.saySome());
+        System.out.println(animal.saySome());
     }
 
     public static void outputInfo(Info info) {
