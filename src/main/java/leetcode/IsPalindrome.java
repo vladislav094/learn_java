@@ -16,9 +16,34 @@ public class IsPalindrome {
         return firstWord.equals(secondWord);
     }
 
+    public static boolean isPalindromeSecondEdition(String s) {
+        if (s.isEmpty()) return true;
+
+        int first = 0;
+        int last = s.length() - 1;
+        while (first<=last){
+            char currFirst = s.charAt(first);
+            char currLast = s.charAt(last);
+
+            if (!Character.isLetterOrDigit(currFirst)) {
+                first++;
+            } else if (!Character.isLetterOrDigit(currLast)) {
+                last--;
+            } else {
+                if(Character.toLowerCase(currFirst) != Character.toLowerCase(currLast)) {
+                    return false;
+                }
+                first++;
+                last--;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         String word = "A man, a plan, a canal: Panama";
-        System.out.println(isPalindrome(word));
-        System.out.println(isPalindrome("0P"));
+//        System.out.println(isPalindrome(word));
+//        System.out.println(isPalindrome("0P"));
+        System.out.println(isPalindromeSecondEdition(word));
     }
 }
