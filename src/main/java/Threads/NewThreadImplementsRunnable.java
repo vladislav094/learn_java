@@ -1,9 +1,9 @@
 package Threads;
 
-public class NewThread implements Runnable{
+public class NewThreadImplementsRunnable implements Runnable{
     Thread t;
 
-    NewThread() {
+    NewThreadImplementsRunnable() {
         // Создать новый, второй поток.
         t = new Thread(this, "Demo Thread");
         System.out.println("Дочерний поток: " + t);
@@ -24,7 +24,7 @@ public class NewThread implements Runnable{
 
 class ThreadDemo {
     public static void main(String[] args) {
-        NewThread nt = new NewThread();
+        NewThreadImplementsRunnable nt = new NewThreadImplementsRunnable();
         nt.t.start();
         try {
             for(int i = 5; i > 0; i--) {
