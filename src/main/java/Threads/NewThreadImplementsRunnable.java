@@ -32,12 +32,25 @@ class ThreadDemo {
         nt1.t.start();
         nt2.t.start();
         nt3.t.start();
+
+        System.out.println("Thread ONE don't work: " + nt1.t.isAlive());
+        System.out.println("Thread TWO don't work: " + nt2.t.isAlive());
+        System.out.println("Thread THREE don't work: " + nt3.t.isAlive());
+
+
         try {
+            System.out.println("Wait when other threads finish.");
+            nt1.t.join();
+            nt2.t.join();
+            nt3.t.join();
             // Ожидать окончания остальных потоков.
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             System.out.println("Main Thread broken");
         }
+        System.out.println("Thread ONE work: " + nt1.t.isAlive());
+        System.out.println("Thread TWO work: " + nt2.t.isAlive());
+        System.out.println("Thread THREE work: " + nt3.t.isAlive());
         System.out.println("Finish main thread");
     }
 }
