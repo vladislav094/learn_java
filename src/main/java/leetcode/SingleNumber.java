@@ -14,17 +14,14 @@ public class SingleNumber {
      */
     public static int singleNumber(int[] nums) {
         Arrays.sort(nums);
-        System.out.println(Arrays.toString(nums));
-        int counter = 0;
-        int startInt = nums[0];
-        while (counter < nums.length -1) {
-            System.out.println(startInt + " " + nums[counter+1]);
-            startInt = startInt ^ nums[counter+1];
-            counter += 1;
-            System.out.println(startInt);
+        int resultInt = nums[0];
+        int start = 0;
+        while (start < nums.length-1) {
+//            resultInt = resultInt ^ nums[start+1];
+            resultInt ^= nums[start+1];
+            start++;
         }
-        System.out.println();
-        return startInt;
+        return resultInt;
     }
 
     public static void main(String[] args) {
