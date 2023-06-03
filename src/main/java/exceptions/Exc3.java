@@ -1,6 +1,5 @@
-package Exceptions;
+package exceptions;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Exc3 {

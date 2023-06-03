@@ -1,7 +1,4 @@
-package Exceptions;
-
-import java.util.*;
-import java.io.*;
+package exceptions;
 
 public class Exc4 {
     public static void main(String[] args) {

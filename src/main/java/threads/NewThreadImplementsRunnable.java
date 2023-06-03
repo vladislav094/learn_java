@@ -1,4 +1,4 @@
-package Threads;
+package threads;
 
 public class NewThreadImplementsRunnable implements Runnable{
     String name;    // имя потока
