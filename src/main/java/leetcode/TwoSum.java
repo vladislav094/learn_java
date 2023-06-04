@@ -31,7 +31,7 @@ public class TwoSum {
         int target3 = -8;
 
         System.out.println(twoSum(arr, target));
-        System.out.println(twoSum(arr2, target2));
-        System.out.println(twoSum(arr3, target3));
+//        System.out.println(twoSum(arr2, target2));
+//        System.out.println(twoSum(arr3, target3));
     }
 }
