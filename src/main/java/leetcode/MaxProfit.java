@@ -3,18 +3,14 @@ package leetcode;
 public class MaxProfit {
     public static int maxProfit(int[] prices) {
         int result = 0;
-        for(int i = 0; i <= prices.length-1; i++) {
-            for (int j = i + 1; j <= prices.length-1; j++) {
-//                System.out.println(prices[i] + " " + prices[j]);
-                if (prices[i] < prices[j] && result < prices[j] - prices[i]) {
-                    result = prices[j] - prices[i];
-//                    System.out.println(prices[i] + " " + prices[j]);
-//                    System.out.println(result);
-                }
+        int sell = prices[0];
+        for(int i = 1; i <= prices.length-1; i++) {
+            if (prices[i] > sell) {
+                result = Math.max(result, prices[i] - sell);
+            } else {
+               sell = prices[i];
             }
         }
-//        System.out.println();
-//        System.out.println(result);
         return result;
     }
 
