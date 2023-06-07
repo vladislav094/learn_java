@@ -3,6 +3,7 @@ package stdin_stdout;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class ReadingFromFile {
@@ -20,7 +21,7 @@ public class ReadingFromFile {
 
         System.out.println(Arrays.toString(numbers));
         System.out.println(Arrays.toString(digit));
-
+//        Object
         scanner.close();
     }
 
