@@ -21,7 +21,7 @@ public class ProductExceptSelf {
 
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4};
-        int[] arr2 = {-1, 1, 0 -3, 3};
+        int[] arr2 = {-1, 1, 0, -3, 3};
         System.out.println(productExceptSelf(arr));
         System.out.println(productExceptSelf(arr2));
     }

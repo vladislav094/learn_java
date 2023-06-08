@@ -1,4 +1,4 @@
-package generic;
+package generics;
 
 class Gen<T> {
     T ob;

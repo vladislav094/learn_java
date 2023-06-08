@@ -1,4 +1,4 @@
-package generic;
+package generics;
 class Stats<T extends Number> {
     T[] nums;
 
