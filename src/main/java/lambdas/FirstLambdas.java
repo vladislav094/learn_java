@@ -68,6 +68,11 @@ public class FirstLambdas {
         };
 
         System.out.println("Среденее значение жлементов массива Double[] = " + average.func(values));
+
+        outStr = MethodRedDemo.stringOp(MyStringOps::strReverse, inStr);
+        System.out.println("Исходная строка: " + inStr);
+        System.out.println("Обращенная строка: " + outStr);
+
     }
 
 }
@@ -77,6 +82,22 @@ class LambdasAsArgumentsDemo {
         return sf.func(s);
     }
 
+}
+
+class MyStringOps{
+    static String strReverse(String str) {
+        String result = "";
+        int i;
+        for (i = str.length()-1; i >= 0; i--)
+            result += str.charAt(i);
+        return result;
+    }
+}
+
+class MethodRedDemo {
+    static String stringOp (StringFunc sf, String s) {
+        return sf.func(s);
+    }
 }
 
 interface MyNumber {
