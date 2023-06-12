@@ -1,3 +1,4 @@
+package practices;
 
 class MyClass{
     private int alpha;

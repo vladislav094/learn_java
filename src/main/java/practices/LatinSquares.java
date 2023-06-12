@@ -1,4 +1,4 @@
-import java.util.Arrays;
+package practices;
 
 class Helper{
     public static final int[][] makeLatinSquare(int n) {

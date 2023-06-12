@@ -1,3 +1,5 @@
+package practices;
+
 class Err {
     String msg;
     int severity;

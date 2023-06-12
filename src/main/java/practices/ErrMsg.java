@@ -1,3 +1,5 @@
+package practices;
+
 class ErrorMsg {
     String msgs[] = {
             "Ошибка вывода",

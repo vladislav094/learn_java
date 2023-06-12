@@ -1,3 +1,5 @@
+package practices;
+
 public class GrassHopper{
     public static int summation(int n) {
         int[] arrayIntegers = new int[n];

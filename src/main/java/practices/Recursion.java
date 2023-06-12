@@ -1,3 +1,5 @@
+package practices;
+
 class Factorial {
     int factoR(int n) {
         int result;
@@ -18,7 +20,7 @@ public class Recursion {
         Factorial f = new Factorial();
 //        System.out.println(f.factoR(6));
         f.factoR(10);
-//        Factorial d = new Factorial();
+//        practices.Factorial d = new practices.Factorial();
 //        System.out.println(d.sumD(6));
     }
 }

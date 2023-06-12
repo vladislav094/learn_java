@@ -1,4 +1,5 @@
-import java.util.Arrays;
+package practices;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
@@ -57,7 +58,7 @@ class Quicksort {
 public class Debug {
     public static void main(String[] args) {
         char[] a = {'c', 's', 'a', 'e', 'x'};
-//        char[] result = Quicksort.qsort(a);
+//        char[] result = practices.Quicksort.qsort(a);
         System.out.println(Quicksort.isValid("{()[]{}}"));
     }
 }

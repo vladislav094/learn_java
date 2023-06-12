@@ -1,3 +1,5 @@
+package practices;
+
 public class Kata2 {
     public static int setReducer(int[] input) {
         while (input.length > 1){

@@ -1,3 +1,5 @@
+package practices;
+
 class Block {
     int a, b, c;
     int volume;

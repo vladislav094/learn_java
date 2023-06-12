@@ -1,3 +1,5 @@
+package practices;
+
 public class Phone {
     public static void main(String args[]) {
         String numbers[][] = {
@@ -8,7 +10,7 @@ public class Phone {
         };
         int i;
         if(args.length != 1)
-            System.out.println("Использование: java Phone <Имя>");
+            System.out.println("Использование: java practices.Phone <Имя>");
         else {
             for(i=0; i <numbers.length; i++) {
                 if(numbers[i][0].equals(args[0])) {

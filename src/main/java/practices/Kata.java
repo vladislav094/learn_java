@@ -1,3 +1,5 @@
+package practices;
+
 public class Kata {
     public static boolean betterThanAverage(int[] classPoints, int yourPoints) {
         // Your code here

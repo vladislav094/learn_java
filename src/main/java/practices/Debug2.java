@@ -1,3 +1,4 @@
+package practices;
 
 class Animal {
     private int id;

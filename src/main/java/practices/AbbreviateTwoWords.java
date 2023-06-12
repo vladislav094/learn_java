@@ -1,3 +1,5 @@
+package practices;
+
 public class AbbreviateTwoWords {
     public static String abbrevName(String name) {
         String[] s = name.split(" ");

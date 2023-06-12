@@ -1,3 +1,5 @@
+package practices;
+
 public class Encode {
     public static void main(String[] args){
         String msg = "This is a test text";

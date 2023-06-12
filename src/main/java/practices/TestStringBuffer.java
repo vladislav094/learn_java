@@ -1,3 +1,5 @@
+package practices;
+
 import java.util.Arrays;
 
 public class TestStringBuffer {

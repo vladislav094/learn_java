@@ -1,4 +1,4 @@
-import java.util.Arrays;
+package practices;
 
 class Person {
     final String name;    // team memnber's name
