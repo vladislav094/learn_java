@@ -29,22 +29,24 @@ public class Solution {
         Scanner console = new Scanner(System.in);
         String name = console.nextLine();
         int age = console.nextInt();
-        System.out.println(name);
-        System.out.println(age);
+//        System.out.println(name);
+//        System.out.println(age);
+//
+//
+//        Scanner first = new Scanner(System.in);
+//        String firstString = first.nextLine().toLowerCase();
+//
+//        Scanner second = new Scanner(System.in);
+//        String secondString = second.nextLine().toUpperCase();
+//
+//        Scanner third = new Scanner(System.in);
+//        String thirdString = third.nextLine();
+//        System.out.println(thirdString);
+//        System.out.println(secondString);
+//        System.out.println(firstString);
+        System.out.println();
+        System.out.println(5%2);
 
-
-        Scanner first = new Scanner(System.in);
-        String firstString = first.nextLine().toLowerCase();
-
-        Scanner second = new Scanner(System.in);
-        String secondString = second.nextLine().toUpperCase();
-
-        Scanner third = new Scanner(System.in);
-        String thirdString = third.nextLine();
-
-        System.out.println(thirdString);
-        System.out.println(secondString);
-        System.out.println(firstString);
 
     }
 }
