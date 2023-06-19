@@ -47,6 +47,25 @@ public class Solution {
         System.out.println();
         System.out.println(5%2);
 
-
+        Scanner scanner1 = new Scanner(System.in);
+        int firstInt = scanner1.nextInt();
+        Scanner scanner2 = new Scanner(System.in);
+        int secondInt = scanner2.nextInt();
+        Scanner scanner3 = new Scanner(System.in);
+        int thirdInt = scanner3.nextInt();
+        if (firstInt == secondInt && secondInt == thirdInt) {
+            System.out.println(firstInt + " " + secondInt + " " + thirdInt);
+        } else if (firstInt == secondInt) {
+            System.out.println(firstInt + " " + secondInt);
+        } else if (firstInt == thirdInt) {
+            System.out.println(firstInt + " " + thirdInt);
+        } else if (secondInt == thirdInt) {
+            System.out.println(secondInt + " " + thirdInt);
+        }
+        Scanner scanner = new Scanner(System.in);
+        int numberA = scanner.nextInt();
+        int numberB = scanner.nextInt();
+        int maxInt = numberA > numberB ? numberA : numberB;
+        double d = scanner.nextDouble();
     }
 }
