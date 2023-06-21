@@ -8,7 +8,7 @@ public class Solution22 {
             double exp = Math.floor(Math.log10(number[i]));
             double mats = number[i] / Math.pow(10, exp);
             System.out.println(mats + " " + exp);
-
         }
+        System.out.println(-100.0/0.0);
     }
 }
