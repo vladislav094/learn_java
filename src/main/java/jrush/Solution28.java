@@ -15,9 +15,10 @@ class Pair {
 
     public void swap() {
         //напишите тут ваш код
-        int temp = this.x ^ this.y;
+        int temp = y;
         this.x = this.x ^ this.y;
-        this.y = temp;
+        this.y = this.x ^ this.y;
+        this.x = temp;
     }
 }
 public class Solution28 {
