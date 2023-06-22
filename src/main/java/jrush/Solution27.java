@@ -23,7 +23,18 @@ public class Solution27 {
 
     public static void main(String[] args) throws InterruptedException {
 //        getPrediction();
-        printNumbers();
+//        printNumbers();
+        int x = 7;
+//        x = x & 25;
+//        System.out.println(x);
+        x = x & 5;
+        System.out.println(x);
+//        x = x & 3;
+        System.out.println(x);
+        x = x & 12;
+        System.out.println(x);
+        x = x | 1;
+        System.out.println(x);
     }
 
     public static void printNumbers() throws InterruptedException {
@@ -32,5 +43,6 @@ public class Solution27 {
             System.out.println(i);
             Thread.sleep(1, 300000);
         }
+
     }
 }
