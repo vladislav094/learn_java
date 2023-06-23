@@ -35,6 +35,7 @@ public class Solution27 {
         System.out.println(x);
         x = x | 1;
         System.out.println(x);
+        System.out.println(16>>2);
     }
 
     public static void printNumbers() throws InterruptedException {
