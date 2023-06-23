@@ -10,5 +10,6 @@ public class Solution22 {
             System.out.println(mats + " " + exp);
         }
         System.out.println(-100.0/0.0);
+
     }
 }
