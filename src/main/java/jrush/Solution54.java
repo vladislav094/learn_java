@@ -6,10 +6,23 @@ public class Solution54 {
     public static HashMap<String, Double> grades = new HashMap<>();
 
     public static void main(String[] args) {
-        addStudents();
-        System.out.println("Список студентов группы: ");
-        printStudents();
-        System.out.print("Средний балл группы: " + getAverageMark());
+//        addStudents();
+//        System.out.println("Список студентов группы: ");
+//        printStudents();
+//        System.out.print("Средний балл группы: " + getAverageMark());
+        HashMap<String, Integer> map = new HashMap<String, Integer>();
+        map.put("Серега", 21);
+        map.put("Николай", 22);
+        map.put("Иван Петрович", 48);
+        map.put("Анюта", null);
+
+        Set<Map.Entry<String, Integer>> entries = map.entrySet();
+        for(Map.Entry<String, Integer> pair: entries)
+        {
+            String key = pair.getKey();
+            Integer value = pair.getValue();
+            System.out.println(key + " --> " + value);
+        }
     }
 
     public static void addStudents() {
