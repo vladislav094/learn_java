@@ -15,14 +15,13 @@ class StringLinkedList {
     }
 
     public void add(String value) {
-        if(first.next == null) {
+        if (first.next == null){
             Node node = new Node();
             node.value = value;
             first.next = node;
         }
-        if(last.prev == null){
+        if (last.prev == null) {
             last.prev = first.next;
-            return;
         }
 
         Node node = new Node();
