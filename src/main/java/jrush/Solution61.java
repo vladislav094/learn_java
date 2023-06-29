@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Objects;
+
 class User {
 
     private String name;
@@ -77,7 +78,7 @@ public class Solution61 {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 5; i++) {
             addUser(new User());
         }
 
@@ -94,16 +95,46 @@ public class Solution61 {
         System.out.printf(INPUT_AGE, name);
         int age = Integer.parseInt(scanner.nextLine());
 
-        //напишите тут ваш код
-        user.setName(name);
+        switch (user.setName(name)) {
+            case 0:
+                break;
+            case -1:
+                System.out.println(CANNOT_BE_NULL);
+                break;
+            case -2:
+                System.out.println(CANNOT_BE_EMPTY);
+                break;
+            case -3:
+                System.out.println(CANNOT_CONTAIN_DIGIT);
+                break;
+            default:
+                System.out.println(UNKNOWN_ERROR);
+                break;
 
-        user.setAge(age);
+        }
+        switch (user.setAge(age)) {
+            case 0:
+                break;
+            case -1:
+                System.out.println(CANNOT_BE_NEGATIVE);
+                break;
+            case -2:
+                System.out.println(CANNOT_BE_TOO_BIG);
+                break;
+            default:
+                System.out.println(UNKNOWN_ERROR);
+        }
+
 
         users.add(user);
     }
 
     static void findUserIndex(User user) {
-        //напишите тут ваш код
-        System.out.printf(FOUND, user.getName(), users.indexOf(user));
+        int index = users.indexOf(user);
+        if (index == -1) {
+            System.out.printf(NOT_FOUND, user.getName());
+        } else {
+            System.out.printf(FOUND, user.getName(), index);
+        }
     }
 }
