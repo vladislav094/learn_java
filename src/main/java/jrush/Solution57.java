@@ -15,22 +15,30 @@ class StringLinkedList {
     }
 
     public void add(String value) {
-        //напишите тут ваш код
-        if (last == null){
-            last = new Node();
+        if (first.next == null) {
+            Node node = new Node();
+            node.value = value;
+            first.next = node;
+        }
+        if (last.prev == null) {
+            last.prev = first.next;
             return;
         }
-        Node currentNode = last;
-        while (currentNode.next != null){
-            currentNode = currentNode.next;
-        }
-        currentNode.next = new Node();
+
+        Node node = new Node();
+        node.value = value;
+
+        Node lastNode = last.prev;
+        lastNode.next = node;
+        node.prev = lastNode;
+        last.prev = node;
     }
 
     public static class Node {
         private Node prev;
         private String value;
         private Node next;
+
     }
 }
 public class Solution57 {
