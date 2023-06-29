@@ -15,12 +15,12 @@ class StringLinkedList {
     }
 
     public void add(String value) {
-        if (first.next == null) {
+        if(first.next == null) {
             Node node = new Node();
             node.value = value;
             first.next = node;
         }
-        if (last.prev == null) {
+        if(last.prev == null){
             last.prev = first.next;
             return;
         }
@@ -34,12 +34,25 @@ class StringLinkedList {
         last.prev = node;
     }
 
+    public String get(int index) {
+        //напишите тут ваш код
+        Node temp = first.next;
+        for (int i = 0; i< index; i++) {
+            if (temp.next == null) return null;
+            temp = temp.next;
+
+        }
+        return temp.value;
+    }
+
+
+
     public static class Node {
         private Node prev;
         private String value;
         private Node next;
-
     }
+
 }
 public class Solution57 {
     public static void main(String[] args) {
@@ -54,5 +67,9 @@ public class Solution57 {
         stringLinkedList.add("8");
         stringLinkedList.add("9");
         stringLinkedList.printAll();
+        System.out.println();
+        System.out.println(stringLinkedList.get(4)); // 5
+        System.out.println(stringLinkedList.get(0)); // 5
+        System.out.println(stringLinkedList.get(15)); // 5
     }
 }
