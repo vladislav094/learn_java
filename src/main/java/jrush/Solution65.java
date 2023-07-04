@@ -32,7 +32,7 @@ public class Solution65 {
         try {
             ingredients.put("ice cubes", 7);
         } catch (Exception e) {
-            printBugMethodName(e.getStackTrace());
+            printBugMethodName(Thread.currentThread().getStackTrace());
         }
     }
 
@@ -40,7 +40,7 @@ public class Solution65 {
         try {
             ingredients.put("vodka", 50);
         } catch (Exception e) {
-            printBugMethodName(e.getStackTrace());
+            printBugMethodName(Thread.currentThread().getStackTrace());
         }
     }
 
@@ -48,7 +48,7 @@ public class Solution65 {
         try {
             ingredients.put(null, 100);
         } catch (Exception e) {
-            printBugMethodName(e.getStackTrace());
+            printBugMethodName(Thread.currentThread().getStackTrace());
         }
     }
 
@@ -56,7 +56,7 @@ public class Solution65 {
         try {
             ingredients.put("orange slice", 1);
         } catch (Exception e) {
-            printBugMethodName(e.getStackTrace());
+            printBugMethodName(Thread.currentThread().getStackTrace());
         }
     }
 
