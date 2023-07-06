@@ -14,12 +14,23 @@ public class Solution81 {
         Scanner scanner = new Scanner(System.in);
         Path directory = Path.of(scanner.nextLine());
         //напишите тут ваш код
-        try(DirectoryStream<Path> directoryStream = Files.newDirectoryStream(directory)) {
-            for (Path path: directoryStream) {
+//        try(DirectoryStream<Path> directoryStream = Files.newDirectoryStream(directory)) {
+//            for (Path path: directoryStream) {
+//                if (Files.isRegularFile(path)) {
+//                    System.out.println(path + THIS_IS_FILE);
+//                } if (Files.isDirectory(path)){
+//                    System.out.println(path + THIS_IS_DIR);
+//                }
+//            }
+//        }
+
+        Path sourceDirectory = Path.of(scanner.nextLine());
+        Path targetDirectory = Path.of(scanner.nextLine());
+        //напишите тут ваш код
+        try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(sourceDirectory)) {
+            for (Path path : directoryStream) {
                 if (Files.isRegularFile(path)) {
-                    System.out.println(path + THIS_IS_FILE);
-                } if (Files.isDirectory(path)){
-                    System.out.println(path + THIS_IS_DIR);
+                    Files.copy(path, targetDirectory.resolve(path.getFileName()));
                 }
             }
         }
