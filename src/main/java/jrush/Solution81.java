@@ -24,15 +24,27 @@ public class Solution81 {
 //            }
 //        }
 
+//        Path sourceDirectory = Path.of(scanner.nextLine());
+//        Path targetDirectory = Path.of(scanner.nextLine());
+//        //напишите тут ваш код
+//        try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(sourceDirectory)) {
+//            for (Path path : directoryStream) {
+//                if (Files.isRegularFile(path)) {
+//                    Files.copy(path, targetDirectory.resolve(path.getFileName()));
+//                }
+//            }
+//        }
+
         Path sourceDirectory = Path.of(scanner.nextLine());
         Path targetDirectory = Path.of(scanner.nextLine());
         //напишите тут ваш код
         try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(sourceDirectory)) {
             for (Path path : directoryStream) {
                 if (Files.isRegularFile(path)) {
-                    Files.copy(path, targetDirectory.resolve(path.getFileName()));
+                    Files.move(path, targetDirectory.resolve(path.getFileName()));
                 }
             }
         }
+
     }
 }
