@@ -1,4 +1,5 @@
 package jrush;
+
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -6,6 +7,7 @@ import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
+
 public class Solution89 {
 
     private static final int FRIDAY = 5;
@@ -37,7 +39,7 @@ public class Solution89 {
         int countOfMinutes = dateTime.getHour() * 60 + dateTime.getMinute();
         if (dayValue == SATURDAY) return true;
         else if (dayValue == FRIDAY && countOfMinutes >= 1320) return true;
-        else if (dayValue == SUNDAY && countOfMinutes <= 1379 ) return true;
+        else if (dayValue == SUNDAY && countOfMinutes <= 1379) return true;
         return false;
     }
 }
