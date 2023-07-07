@@ -2,9 +2,14 @@ package jrush;
 
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.util.Locale;
 import java.util.TreeSet;
-
+import java.time.LocalDateTime;
 public class Solution92 {
+    static LocalDateTime localDateTime = LocalDateTime.of(2020, 3, 19, 9, 17);
+    static ZoneId zoneId = ZoneId.of("Zulu");
+    static ZonedDateTime globalTime;
+
     public static void main(String[] args) {
         TreeSet<String> sortedZones = getSortedZones();
         System.out.println(sortedZones.size());
@@ -12,6 +17,9 @@ public class Solution92 {
         System.out.println(sortedZones.last());
 
         System.out.println(getBeijingDateTime());
+
+        globalTime = ZonedDateTime.of(localDateTime, zoneId);
+        System.out.println(globalTime);
     }
 
     static TreeSet<String> getSortedZones() {
