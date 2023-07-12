@@ -12,7 +12,6 @@ public class Solution95 {
 
     public static void main(String[] args) {
         LocalDateTime dateTime = LocalDateTime.parse(timeString, dateTimeFormatter);
-
         System.out.println(dateTime);
         LocalTime localDate = LocalTime.now();
         System.out.println(localDate);
