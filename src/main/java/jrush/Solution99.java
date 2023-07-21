@@ -1,39 +1,4 @@
 package jrush;
-
-<<<<<<< HEAD
-import java.util.ArrayList;
-
-interface Voice {
-    public void voice();
-}
-public class Solution99 {
-    public static void main(String[] args) {
-        ArrayList pets = new ArrayList();
-        pets.add(new Cats());
-        pets.add(new Dogs());
-
-        for (Object pet: pets) {
-            if (pet instanceof Voice) {
-                Voice scream = (Voice) pet;
-                scream.voice();
-            }
-        }
-    }
-}
-
-class Dogs implements Voice {
-
-    public void voice(){
-        System.out.println("GAF");
-    }
-}
-class Cats implements Voice {
-
-    public void voice(){
-        System.out.println("Miy");
-    }
-}
-=======
 public class Solution99 {
     //    public static void main(String[] args) {
 //        Stream<Integer> stream1 = Stream.of(1, 2, 3, 4, 5);
@@ -86,4 +51,3 @@ public class Solution99 {
         c2.sayMiu();
     }
 }
->>>>>>> 5741a16dbff6b9adb386bbedb0e8ccbfd5814e5d
