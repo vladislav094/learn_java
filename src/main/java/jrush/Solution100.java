@@ -17,6 +17,7 @@ class One {
 
 interface HasName {
     String getName();
+
     int getWeight();
 }
 
