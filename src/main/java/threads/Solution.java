@@ -39,7 +39,6 @@ public class Solution {
 
         public Date stopPlaying() {
             System.out.println(this.owner + " is stopping playing");
-
             return new Date();
         }
 
