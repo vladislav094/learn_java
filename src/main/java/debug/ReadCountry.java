@@ -3,13 +3,16 @@ package debug;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ReadCountry {
     public static void main(String[] args) {
         String filePath = "src/main/java/debug/country.json";
+        String outputFilePath = "src/main/java/debug/result.json";
 
         List<String> alpha2List = new ArrayList<>();
 
@@ -33,10 +36,20 @@ public class ReadCountry {
             e.printStackTrace();
         }
 
-//         Вывод списка значений ключей "Alpha2"
-        for (String alpha2 : alpha2List) {
-            System.out.println(alpha2);
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFilePath))) {
+            for (String key: alpha2List) {
+                writer.write(key);
+                writer.newLine();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
+//         Вывод списка значений ключей "Alpha2"
+//        for (String alpha2 : alpha2List) {
+//            System.out.println(alpha2);
+//        }
+
 
     }
 }
