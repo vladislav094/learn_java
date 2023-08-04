@@ -2,17 +2,21 @@ package debug;
 
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ReadCountry {
-    public static void main(String[] args) {
-        String filePath = "src/main/java/debug/country.json";
-        String outputFilePath = "src/main/java/debug/result.json";
+
+    public static final String filePath = "src/main/java/debug/country.json";
+    public static final String outputFilePath = "src/main/java/debug/result.json";
+
+    public static final String outputResponseFilePath = "src/main/java/debug/arrayResults.json";
+
+    public static Set<String> set = new HashSet<>();
+    public static void main(String[] args) throws IOException {
 
         List<String> alpha2List = new ArrayList<>();
 
@@ -49,7 +53,66 @@ public class ReadCountry {
 //        for (String alpha2 : alpha2List) {
 //            System.out.println(alpha2);
 //        }
+    }
 
+    public static void writeInFile(String answer) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputResponseFilePath, true))) {
+            try {
+                writer.write(answer);
+                writer.newLine();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
+    public static ArrayList<String> readFile(String filePath) {
+        BufferedReader reader;
+        ArrayList<String> result = new ArrayList<>();
+        try {
+            reader = new BufferedReader(new FileReader(filePath));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        String line;
+        while (true) {
+            try {
+                if (!((line = reader.readLine()) != null)) break;
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            result.add(line.toLowerCase());
+            }
+        return result;
+    }
+
+    public static String readEnv() {
+        BufferedReader reader;
+        String result = "";
+        try {
+            reader = new BufferedReader(new FileReader("/home/useradmin/Idea/learn_java/.env"));
+            while ((result = reader.readLine()) != null) break;
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
+    public static void clearFileIfFull() {
+        File file = new File(ReadCountry.outputResponseFilePath);
+        if (file.length() != 0) {
+            FileWriter fileWriter = null;
+            try {
+                fileWriter = new FileWriter(file);
+                fileWriter.write("");
+                fileWriter.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }

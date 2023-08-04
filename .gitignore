@@ -2,7 +2,12 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+
+### MY files (closed) ###
 src/main/java/debug/country.json
+src/main/java/debug/arrayResults.json
+src/main/java/debug/result.json
+.env
 #src/main/java/debug
 
 ### IntelliJ IDEA ###
