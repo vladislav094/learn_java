@@ -1,36 +1,38 @@
 package debug.specification;
 
 import debug.ReadCountry;
+import io.restassured.RestAssured;
+import io.restassured.filter.log.LogDetail;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.Test;
-import java.io.*;
+
 import java.util.HashSet;
 import java.util.Set;
 
 import static io.restassured.RestAssured.given;
 
 public class WarmingUpTests {
-    static int count = 0;
+    static Set<String> setWithGetResponse = new HashSet<>();
+    static Set<String> setWithPostResponse = new HashSet<>();
+
     @Test
     public void warmingUpForEachGEO() {
-        ReadCountry.readFile(ReadCountry.outputFilePath).forEach((geo) -> {
-            sendRequest(geo);
-        });
-        System.out.println(count);
+        ReadCountry.clearFileIfFull(ReadCountry.fileOfPostRequest);
+        ReadCountry.readFile(ReadCountry.outputFilePath).forEach(this::sendRequest);
+        for (String s: setWithPostResponse) {
+            ReadCountry.writeInFile(s, ReadCountry.fileOfPostRequest);
+        }
     }
 
     @Test
     public void writeAllResultForEachGEO() {
-        Set<String> set = new HashSet<>();
-        ReadCountry.clearFileIfFull();
-        ReadCountry.readFile(ReadCountry.outputFilePath).forEach((geo) -> {
-            getResponse(geo);
-        });
-
-        System.out.println(count);
-        for (String s: ReadCountry.set) {
-            System.out.println(s);
+        ReadCountry.clearFileIfFull(ReadCountry.fileWithGetRequestResults);
+        ReadCountry.readFile(ReadCountry.outputFilePath).forEach(this::getResponse);
+        for (String s: setWithGetResponse) {
+            ReadCountry.writeInFile(s, ReadCountry.fileWithGetRequestResults);
         }
+
     }
 
 
@@ -40,7 +42,10 @@ public class WarmingUpTests {
         Response response = given()
                 .post(geo);
         response.then().statusCode(200);
-        count++;
+        String resp = response.asString();
+        System.out.println(resp);
+//        WarmingUpTests.setWithPostResponse.add(resp);
+
     }
 
     @Test
@@ -50,9 +55,8 @@ public class WarmingUpTests {
         Response response = given()
                 .queryParam("offset", 1)
                 .get(geo);
-        count++;
         String resp = response.asString();
-        ReadCountry.set.add(resp);
+        WarmingUpTests.setWithGetResponse.add(resp);
 //        ReadCountry.writeInFile(resp);
 
     }

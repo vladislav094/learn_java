@@ -5,20 +5,20 @@ import org.json.JSONObject;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class ReadCountry {
 
     public static final String filePath = "src/main/java/debug/country.json";
     public static final String outputFilePath = "src/main/java/debug/result.json";
+    public static final String fileWithGetRequestResults = "src/main/java/debug/arrayResults.json";
+    public static final String fileOfPostRequest = "src/main/java/debug/postRequestURI.json";
 
-    public static final String outputResponseFilePath = "src/main/java/debug/arrayResults.json";
 
-    public static Set<String> set = new HashSet<>();
+//    public static Set<String> set = new HashSet<>();
     public static void main(String[] args) throws IOException {
 
-        List<String> alpha2List = new ArrayList<>();
+        Set<String> alpha2List = new HashSet<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             StringBuilder jsonContent = new StringBuilder();
@@ -55,8 +55,8 @@ public class ReadCountry {
 //        }
     }
 
-    public static void writeInFile(String answer) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputResponseFilePath, true))) {
+    public static void writeInFile(String answer, String filePath) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
             try {
                 writer.write(answer);
                 writer.newLine();
@@ -92,7 +92,8 @@ public class ReadCountry {
         BufferedReader reader;
         String result = "";
         try {
-            reader = new BufferedReader(new FileReader("/home/useradmin/Idea/learn_java/.env"));
+//            reader = new BufferedReader(new FileReader("/home/useradmin/Idea/learn_java/.env"));
+            reader = new BufferedReader(new FileReader("/home/vladislav/IdeaProjects/learn_java/.env"));
             while ((result = reader.readLine()) != null) break;
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -102,8 +103,8 @@ public class ReadCountry {
         return result;
     }
 
-    public static void clearFileIfFull() {
-        File file = new File(ReadCountry.outputResponseFilePath);
+    public static void clearFileIfFull(String filePath) {
+        File file = new File(filePath);
         if (file.length() != 0) {
             FileWriter fileWriter = null;
             try {
