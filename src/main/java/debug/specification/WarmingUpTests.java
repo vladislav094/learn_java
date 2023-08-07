@@ -1,12 +1,12 @@
 package debug.specification;
 
 import debug.ReadCountry;
-import io.restassured.RestAssured;
-import io.restassured.filter.log.LogDetail;
+import io.restassured.filter.Filter;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -42,8 +42,9 @@ public class WarmingUpTests {
         Response response = given()
                 .post(geo);
         response.then().statusCode(200);
-        String resp = response.asString();
-        System.out.println(resp);
+
+//        String resp = response.asPrettyString();
+//        System.out.println(resp);
 //        WarmingUpTests.setWithPostResponse.add(resp);
 
     }

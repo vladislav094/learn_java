@@ -16,7 +16,7 @@ public class Specifications {
         return new RequestSpecBuilder()
                 .setBaseUri(URL)
 //                .log(LogDetail.ALL)
-//                .log(LogDetail.URI)
+                .log(LogDetail.URI)
 //                .log(LogDetail.BODY)
                 .build();
     }
