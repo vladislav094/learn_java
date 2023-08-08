@@ -19,7 +19,7 @@ public class WarmingUpTests {
     @Test
     public void warmingUpForEachGEO() {
         ReadCountry.clearFileIfFull(ReadCountry.fileOfPostRequest);
-        ReadCountry.readFile(ReadCountry.outputFilePath).forEach(this::sendRequest);
+        ReadCountry.readFile(ReadCountry.outputFilePath).stream().forEachOrdered(this::sendRequest);
         for (String s: setWithPostResponse) {
             ReadCountry.writeInFile(s, ReadCountry.fileOfPostRequest);
         }
@@ -42,7 +42,6 @@ public class WarmingUpTests {
         Response response = given()
                 .post(geo);
         response.then().statusCode(200);
-
 //        String resp = response.asPrettyString();
 //        System.out.println(resp);
 //        WarmingUpTests.setWithPostResponse.add(resp);
@@ -52,13 +51,10 @@ public class WarmingUpTests {
     @Test
     public void getResponse(String geo) {
         Specifications.installSpecification(Specifications.requestSpec(), Specifications.responseSpec());
-
         Response response = given()
                 .queryParam("offset", 1)
                 .get(geo);
         String resp = response.asString();
         WarmingUpTests.setWithGetResponse.add(resp);
-//        ReadCountry.writeInFile(resp);
-
     }
 }
