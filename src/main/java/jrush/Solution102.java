@@ -7,7 +7,7 @@ import java.io.IOException;
 /*
 AmigoOutputStream
 */
-public class Solution102 {s
+public class Solution102 {
 
 }
 
