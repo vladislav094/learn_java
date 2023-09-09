@@ -13,7 +13,7 @@ import java.util.List;
 
 public class ParseJson {
     public static void main(String[] args) throws IOException {
-        String filePath = "/home/useradmin/Idea/learn_java/src/main/java/jsonParser/myJson.json";
+        String filePath = "/home/vladislav/IdeaProjects/learn_java/src/main/java/jsonParser/myJson.json";
         String content = new String(Files.readAllBytes(Paths.get(filePath)));
 
         List<String> arr = new ArrayList<>();
@@ -32,7 +32,7 @@ public class ParseJson {
             e.printStackTrace();
         }
 
-        String filePath2 = "/home/useradmin/Idea/learn_java/src/main/java/jsonParser/tournaments.json";
+        String filePath2 = "/home/vladislav/IdeaProjects/learn_java/src/main/java/jsonParser/tournaments.json";
         String content2 = new String(Files.readAllBytes(Paths.get(filePath2)));
 
         try {
