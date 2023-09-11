@@ -20,11 +20,12 @@ public interface ImportConfig extends Config {
     @DefaultValue("banana %s")
     String bar(String name);
 
-    @DefaultValue("pear")
+    @Key("baz")
+//    @DefaultValue("pear")
     String baz();
 
 
-    @Key("list")
+//    @Key("list")
     @DefaultValue("[1, 2]")
     List<Integer> ints();
 }

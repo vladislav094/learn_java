@@ -2,7 +2,9 @@ package properties;
 
 import org.aeonbits.owner.Config;
 import org.aeonbits.owner.ConfigFactory;
+import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.util.List;
 
 @Config.Sources({"file:./src/main/java/properties/debug.properties"})
@@ -19,14 +21,18 @@ public interface ServerConfig extends Config {
     int maxThreads();
 
     @Key("list.integer")
-    @DefaultValue("[0, 0, 0]")
     List<Integer> listInt();
 
 }
 
 class MyServerProperties{
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         ServerConfig serverConfig = ConfigFactory.create(ServerConfig.class);
-        System.out.println(serverConfig.listInt());
+        System.out.println(serverConfig.port());
+
+        System.getProperties().load(ClassLoader.getSystemResourceAsStream("one.properties"));
+        String url = System.getProperty("user.name");
+        System.out.println(url);
     }
+
 }

@@ -79,5 +79,12 @@
             <artifactId>owner</artifactId>
             <version>1.0.12</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.typesafe/config -->
+        <dependency>
+            <groupId>com.typesafe</groupId>
+            <artifactId>config</artifactId>
+            <version>1.4.2</version>
+        </dependency>
+
     </dependencies>
 </project>

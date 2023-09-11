@@ -50,15 +50,15 @@ public class ParseJson {
         Collections.sort(arr);
         Collections.sort(arr2);
 
-        for (String s: arr) {
-            System.out.print(s+",");
+        for (String s : arr) {
+            System.out.print(s + ",");
         }
         System.out.println();
         System.out.println(arr.size());
 
         System.out.println();
-        for (String s: arr2) {
-            System.out.print(s+",");
+        for (String s : arr2) {
+            System.out.print(s + ",");
         }
         System.out.println();
         System.out.println(arr2.size());
