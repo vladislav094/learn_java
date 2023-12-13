@@ -2,6 +2,7 @@ package debug;
 
 import org.json.JSONObject;
 
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -17,7 +18,7 @@ public class ReadCountry {
 
 //    public static Set<String> set = new HashSet<>();
     public static void main(String[] args) throws IOException {
-
+//        MyDebug.f1("q", 1);
         Set<String> alpha2List = new HashSet<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
